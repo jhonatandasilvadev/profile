@@ -58,7 +58,7 @@ const Hero = () => {
               Jhonatan da Silva
             </h1>
             <p className="text-2xl md:text-3xl text-gradient font-semibold">
-              Software Developer
+              Junior Software Developer
             </p>
             <p className="text-lg text-white/70 max-w-xl leading-relaxed">
               Creating fast, clean interfaces built around great UX, real results, and solid best practices.

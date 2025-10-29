@@ -34,7 +34,9 @@ const About = () => {
           className="glass-effect rounded-3xl p-8 md:p-12"
         >
           <p className="text-lg text-white/80 leading-relaxed mb-8">
-            Software developer passionate about creating clean, accessible, and high-performance digital experiences.
+            Junior software developer passionate about creating clean, accessible, and high-performance digital experiences.
+            <br /><br />
+            Currently pursuing higher education in technology and learning development the right way — building real projects, understanding fundamentals, and constantly improving my craft.
             <br /><br />
             My background blends hands-on tech work — from computer assembly and testing to full-stack web development.
             <br /><br />
