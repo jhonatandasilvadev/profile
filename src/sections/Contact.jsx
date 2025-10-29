@@ -157,8 +157,7 @@ const Contact = () => {
               Let's Connect
             </h3>
             <p className="text-white/70 mb-8">
-              Feel free to reach out through any of these platforms. I'm always
-              open to discussing new projects and opportunities.
+              Feel free to reach out on any of these platforms — I'm always open to talk about new projects and opportunities.
             </p>
 
             {/* Email */}

@@ -61,8 +61,7 @@ const Hero = () => {
               Software Developer
             </p>
             <p className="text-lg text-white/70 max-w-xl leading-relaxed">
-              I craft fast and clean interfaces focused on results, UX, and best
-              practices.
+              Creating fast, clean interfaces built around great UX, real results, and solid best practices.
             </p>
 
             {/* Buttons */}

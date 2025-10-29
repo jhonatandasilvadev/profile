@@ -34,12 +34,13 @@ const About = () => {
           className="glass-effect rounded-3xl p-8 md:p-12"
         >
           <p className="text-lg text-white/80 leading-relaxed mb-8">
-            I'm a software developer focused on building clean, accessible, and
-            high-performance digital experiences. I have experience in
-            technology, computer assembly and testing, and web development.
-            Passionate about hardware, games, and performance, I use this
-            portfolio to showcase practical and functional projects that reflect
-            my growth and creativity.
+            Software developer passionate about creating clean, accessible, and high-performance digital experiences.
+            <br /><br />
+            My background blends hands-on tech work — from computer assembly and testing to full-stack web development.
+            <br /><br />
+            I love exploring how design, code, and performance come together to make ideas real.
+            <br />
+            This portfolio is where I share the projects that shaped my skills and reflect the way I think, build, and grow.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
