@@ -39,7 +39,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl opacity-20 blur-2xl"></div>
               <div className="relative w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl border border-white/10 overflow-hidden">
                 <img
-                  src="/profile-photo.png"
+                  src={`${import.meta.env.BASE_URL}profile-photo.png`}
                   alt="Jhonatan da Silva"
                   className="w-full h-full object-cover"
                 />
