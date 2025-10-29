@@ -2,6 +2,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Code, Cpu, Gamepad2, TrendingUp } from 'lucide-react'
 
+/**
+ * About Section Component
+ * Displays personal information and interests
+ * Features animated cards with icons
+ */
 const About = () => {
   const highlights = [
     { icon: Code, text: 'Clean Code' },

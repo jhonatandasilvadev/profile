@@ -1,6 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+/**
+ * Footer Component
+ * Simple footer with copyright information
+ * Features fade-in animation
+ */
 const Footer = () => {
   return (
     <footer className="py-8 border-t border-white/10">
@@ -20,4 +25,5 @@ const Footer = () => {
 }
 
 export default Footer
+
 

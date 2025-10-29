@@ -177,3 +177,4 @@ start.bat             # Iniciar no Windows
 
 Desenvolvido com cuidado e paixão 💜
 
+

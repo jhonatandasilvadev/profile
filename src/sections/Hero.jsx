@@ -2,6 +2,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
 
+/**
+ * Hero Section Component
+ * Main landing section with profile photo, introduction, and CTA buttons
+ * Features smooth animations and responsive design
+ */
 const Hero = () => {
   const skills = [
     { name: 'HTML5', icon: '🌐' },
@@ -36,12 +41,16 @@ const Hero = () => {
             className="flex justify-center"
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl opacity-20 blur-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl opacity-20 blur-2xl" aria-hidden="true"></div>
               <div className="relative w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl border border-white/10 overflow-hidden">
                 <img
                   src={`${import.meta.env.BASE_URL}profile-photo.png`}
-                  alt="Jhonatan da Silva"
+                  alt="Jhonatan da Silva - Software Developer"
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  width="320"
+                  height="320"
                 />
               </div>
             </div>
@@ -73,6 +82,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('projects')}
                 className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+                aria-label="Ver meus projetos"
               >
                 View Projects
               </motion.button>
@@ -81,6 +91,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('contact')}
                 className="px-8 py-3 glass-effect rounded-full text-white font-semibold hover:bg-white/10 transition-all"
+                aria-label="Entrar em contato"
               >
                 Contact Me
               </motion.button>

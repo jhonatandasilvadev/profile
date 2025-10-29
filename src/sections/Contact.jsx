@@ -2,26 +2,80 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Instagram, MessageCircle, Mail, Send } from 'lucide-react'
 
+/**
+ * Contact Section Component
+ * Features contact form with validation and social media links
+ * All external links open in new tabs for better UX
+ */
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   })
+  const [errors, setErrors] = useState({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const validateForm = () => {
+    const newErrors = {}
+    
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = 'Nome é obrigatório'
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Nome deve ter pelo menos 2 caracteres'
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email é obrigatório'
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Email inválido'
+    }
+    
+    // Message validation
+    if (!formData.message.trim()) {
+      newErrors.message = 'Mensagem é obrigatória'
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Mensagem deve ter pelo menos 10 caracteres'
+    }
+    
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would handle the form submission
-    // For now, we'll just show an alert
-    alert('Message sent! (This is a demo - implement your own backend)')
-    setFormData({ name: '', email: '', message: '' })
+    
+    if (!validateForm()) {
+      return
+    }
+    
+    setIsSubmitting(true)
+    
+    // Simulate form submission
+    setTimeout(() => {
+      alert('Mensagem enviada com sucesso! 🎉\n(Este é um demo - implemente seu próprio backend)')
+      setFormData({ name: '', email: '', message: '' })
+      setErrors({})
+      setIsSubmitting(false)
+    }, 1000)
   }
 
   const handleChange = (e) => {
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     })
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: '',
+      })
+    }
   }
 
   const socialLinks = [
@@ -75,7 +129,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               <div>
                 <label
                   htmlFor="name"
@@ -89,10 +143,18 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 glass-effect rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                  className={`w-full px-4 py-3 glass-effect rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 transition-all ${
+                    errors.name ? 'ring-2 ring-red-500' : 'focus:ring-purple-500'
+                  }`}
                   placeholder="Your name"
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? 'name-error' : undefined}
                 />
+                {errors.name && (
+                  <p id="name-error" className="mt-1 text-sm text-red-400">
+                    {errors.name}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -108,10 +170,18 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 glass-effect rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                  className={`w-full px-4 py-3 glass-effect rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 transition-all ${
+                    errors.email ? 'ring-2 ring-red-500' : 'focus:ring-purple-500'
+                  }`}
                   placeholder="your@email.com"
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? 'email-error' : undefined}
                 />
+                {errors.email && (
+                  <p id="email-error" className="mt-1 text-sm text-red-400">
+                    {errors.email}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -126,21 +196,33 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows="5"
-                  className="w-full px-4 py-3 glass-effect rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all resize-none"
+                  className={`w-full px-4 py-3 glass-effect rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 transition-all resize-none ${
+                    errors.message ? 'ring-2 ring-red-500' : 'focus:ring-purple-500'
+                  }`}
                   placeholder="Your message..."
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? 'message-error' : undefined}
                 ></textarea>
+                {errors.message && (
+                  <p id="message-error" className="mt-1 text-sm text-red-400">
+                    {errors.message}
+                  </p>
+                )}
               </div>
 
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className={`w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2 ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
+                aria-label="Enviar mensagem"
               >
-                <Send size={20} className="text-white" />
-                Send Message
+                <Send size={20} className="text-white" aria-hidden="true" />
+                {isSubmitting ? 'Enviando...' : 'Send Message'}
               </motion.button>
             </form>
           </motion.div>
@@ -165,8 +247,9 @@ const Contact = () => {
               whileHover={{ scale: 1.02 }}
               href="mailto:jhonatandasilva.dev@gmail.com"
               className="flex items-center gap-3 px-6 py-4 glass-effect rounded-xl mb-6 hover:bg-white/10 transition-all group"
+              aria-label="Enviar email para jhonatandasilva.dev@gmail.com"
             >
-              <Mail size={24} className="text-white group-hover:text-purple-400 transition-colors" />
+              <Mail size={24} className="text-white group-hover:text-purple-400 transition-colors" aria-hidden="true" />
               <span className="text-white/80 group-hover:text-white transition-colors">
                 jhonatandasilva.dev@gmail.com
               </span>
@@ -188,8 +271,9 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-6 py-4 glass-effect rounded-xl hover:bg-white/10 transition-all group"
+                    aria-label={`Visitar meu perfil no ${social.name}`}
                   >
-                    <Icon size={28} className={`text-white ${social.color} transition-colors`} />
+                    <Icon size={28} className={`text-white ${social.color} transition-colors`} aria-hidden="true" />
                     <span className="text-white/80 group-hover:text-white transition-colors font-medium">
                       {social.name}
                     </span>

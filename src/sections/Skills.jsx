@@ -2,6 +2,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Code2, Palette, Server, Database, GitBranch, Github, Container, Box, Figma, Layers, Smartphone } from 'lucide-react'
 
+/**
+ * Skills Section Component
+ * Displays technical skills with icons and descriptions
+ * Responsive grid layout with hover animations
+ */
 const Skills = () => {
   const skills = [
     {
@@ -108,4 +113,5 @@ const Skills = () => {
 }
 
 export default Skills
+
 
