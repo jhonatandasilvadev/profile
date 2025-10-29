@@ -55,13 +55,15 @@ const Hero = () => {
             className="space-y-6"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white">
-              Jhonatan da Silva
+              Jhonatan Silva
             </h1>
             <p className="text-2xl md:text-3xl text-gradient font-semibold">
               Junior Software Developer
             </p>
             <p className="text-lg text-white/70 max-w-xl leading-relaxed">
               Creating fast, clean interfaces built around great UX, real results, and solid best practices.
+              <br />
+              Learning the right way while pursuing higher education in technology.
             </p>
 
             {/* Buttons */}
