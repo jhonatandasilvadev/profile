@@ -15,7 +15,7 @@ const Projects = () => {
       description:
         'A fitness tracking app built to record workouts, manage exercises, and track progression. Includes load history, custom exercises, and local storage support.',
       tags: ['React', 'JavaScript', 'HTML', 'CSS'],
-      liveUrl: 'https://jhonatandasilvadev.github.io/training-app/',
+      liveUrl: 'https://jhonatandasilvadev.github.io/site-exata/',
       repoUrl: 'https://github.com/jhonatandasilvadev/training-app',
     },
     {
@@ -24,8 +24,8 @@ const Projects = () => {
       description:
         'A modern and responsive institutional website for Exatasis, focused on clarity, accessibility, and user experience. Features smooth navigation and performance optimization.',
       tags: ['HTML', 'CSS', 'JavaScript', 'Tailwind'],
-      liveUrl: 'https://jhonatandasilvadev.github.io/site-exatasis/',
-      repoUrl: 'https://github.com/jhonatandasilvadev/site-exatasis',
+      liveUrl: 'https://jhonatandasilvadev.github.io/site-exata/',
+      repoUrl: 'https://github.com/jhonatandasilvadev/site-exata',
     },
   ]
 
