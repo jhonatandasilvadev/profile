@@ -27,6 +27,15 @@ const Projects = () => {
       liveUrl: 'https://jhonatandasilvadev.github.io/site-exatasis/',
       repoUrl: 'https://github.com/jhonatandasilvadev/site-exatasis',
     },
+    {
+      id: 'the-organizer',
+      name: 'The Organizer',
+      description:
+        'A modern organization app with sticky notes on an infinite canvas. Features glassmorphism design, dark/light theme, zoom/pan navigation, drag & drop, auto-save, and Windows executable support.',
+      tags: ['React', 'TypeScript', 'Vite', 'CSS3'],
+      liveUrl: 'https://jhonatandasilvadev.github.io/the-organizer/',
+      repoUrl: 'https://github.com/jhonatandasilvadev/the-organizer',
+    },
   ]
 
   return (
