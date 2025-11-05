@@ -216,12 +216,12 @@ const Contact = () => {
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2 ${
+                className={`w-full px-6 py-3 bg-slate-50 rounded-xl text-slate-900 font-semibold hover:bg-white hover:shadow-lg hover:shadow-white/20 transition-all flex items-center justify-center gap-2 ${
                   isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
                 }`}
                 aria-label="Enviar mensagem"
               >
-                <Send size={20} className="text-white" aria-hidden="true" />
+                <Send size={20} className="text-slate-900" aria-hidden="true" />
                 {isSubmitting ? 'Enviando...' : 'Send Message'}
               </motion.button>
             </form>

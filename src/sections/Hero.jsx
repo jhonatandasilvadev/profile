@@ -81,7 +81,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('projects')}
-                className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+                className="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all"
                 aria-label="Ver meus projetos"
               >
                 View Projects
@@ -90,7 +90,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('contact')}
-                className="px-8 py-3 glass-effect rounded-full text-white font-semibold hover:bg-white/10 transition-all"
+                className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/50 transition-all"
                 aria-label="Entrar em contato"
               >
                 Contact Me
