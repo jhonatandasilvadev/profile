@@ -15,7 +15,7 @@ const Projects = () => {
       description:
         'A fitness tracking app built to record workouts, manage exercises, and track progression. Includes load history, custom exercises, and local storage support.',
       tags: ['React', 'JavaScript', 'HTML', 'CSS'],
-      liveUrl: 'https://jhonatandasilvadev.github.io/site-exata/',
+      liveUrl: 'https://jhonatandasilvadev.github.io/training-app/',
       repoUrl: 'https://github.com/jhonatandasilvadev/training-app',
     },
     {
@@ -94,10 +94,10 @@ const Projects = () => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+                  className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg text-slate-900 font-medium hover:bg-white hover:shadow-lg hover:shadow-white/20 transition-all"
                   aria-label={`Ver demonstração ao vivo de ${project.name}`}
                 >
-                  <ExternalLink size={18} className="text-white" aria-hidden="true" />
+                  <ExternalLink size={18} className="text-slate-900" aria-hidden="true" />
                   Live Demo
                 </motion.a>
                 <motion.a
